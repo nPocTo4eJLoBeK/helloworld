@@ -1,5 +1,7 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.exactText;
@@ -9,6 +11,12 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SelenideExactThatTest {
+
+    @BeforeEach
+    public void startUp() {
+        WebDriverManager.chromedriver().setup();
+    }
+
     @Test
     public void test(){
         open("https://qa-mesto.praktikum-services.ru/");

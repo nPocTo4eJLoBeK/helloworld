@@ -1,6 +1,8 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +15,11 @@ import java.time.Duration;
 
 public class SeleniumEx1Test {
     WebDriver driver;
+
+    @BeforeEach
+    public void startUp() {
+        WebDriverManager.chromedriver().setup();
+    }
 
     @Test
     public void test(){
